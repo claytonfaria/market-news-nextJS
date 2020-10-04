@@ -15,7 +15,7 @@ function CompanyProfile({ ticker }) {
           autosize: true,
           symbol: `${ticker}`,
           largeChartUrl:
-            'https://marketnews.netlify.app/{tvexchange}:{tvsymbol}',
+            'https://marketnews-next.vercel.app/symbol/{tvexchange}:{tvsymbol}',
         }}
         copyrightLink={false}
       />

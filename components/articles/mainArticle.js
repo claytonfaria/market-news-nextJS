@@ -3,7 +3,6 @@ import Date from '../../utils/date';
 import styles from './MainArticle.module.css';
 
 function MainArticle({ news }) {
-  // const { multimedia, title, published_date: publishedDate, url } = news;
   const { urlToImage, title, publishedAt, url } = news;
 
   return (

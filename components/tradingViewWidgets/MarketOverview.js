@@ -13,7 +13,7 @@ function MarketOverview() {
               colorTheme: 'light',
               autosize: true,
               largeChartUrl:
-                'https://marketnews.netlify.app/{tvexchange}:{tvsymbol}',
+                'https://marketnews-next.vercel.app/symbol/{tvexchange}:{tvsymbol}',
             }}
             copyrightLink={false}
           />

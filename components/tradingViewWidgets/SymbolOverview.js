@@ -16,7 +16,7 @@ function SymbolOverview({ ticker }) {
           autosize: true,
           symbols: [`${ticker}`],
           largeChartUrl:
-            'https://marketnews.netlify.app/{tvexchange}:{tvsymbol}',
+            'https://marketnews-next.vercel.app/symbol/{tvexchange}:{tvsymbol}',
         }}
         copyrightLink={false}
       />

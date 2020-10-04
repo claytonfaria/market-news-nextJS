@@ -4,13 +4,6 @@ import styles from './ArticleItem.module.css';
 
 function ArticleItem({ news }) {
   const { content, urlToImage, title, publishedAt, url } = news;
-  // const {
-  //   abstract,
-  //   multimedia,
-  //   title,
-  //   published_date: publishedDate,
-  //   url,
-  // } = news;
 
   const reduceTextSize = (text, maxLength) => {
     if (text.length > maxLength) {
