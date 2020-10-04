@@ -14,8 +14,6 @@ function FundamentalData({ ticker }) {
           colorTheme: 'light',
           autosize: true,
           symbol: `${ticker}`,
-          largeChartUrl:
-            'https://marketnews-next.vercel.app/symbol/{tvexchange}:{tvsymbol}',
         }}
         copyrightLink={false}
       />
