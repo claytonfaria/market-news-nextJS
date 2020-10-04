@@ -18,6 +18,7 @@ const Layout = ({ children, home }) => {
           name="description"
           content="Learn the latest Market information"
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           property="og:image"
           content={`https://og-image.now.sh/${encodeURI(
