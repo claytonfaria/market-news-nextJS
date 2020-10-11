@@ -13,8 +13,7 @@
 }
 
 .mainArticle img {
-  display: flex;
-  min-height: 100%;
+  object-fit: cover;
   width: 100%;
   transition: all 0.5s;
 }

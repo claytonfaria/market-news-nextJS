@@ -1,8 +1,15 @@
+import { useEffect, useState } from 'react';
+
 import Date from '../../utils/date';
 
 import styles from './ArticleItem.module.css';
 
 function ArticleItem({ news }) {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    setIsDesktop(window.innerWidth >= 768);
+  }, []);
   const { content, urlToImage, title, publishedAt, url } = news;
 
   const reduceTextSize = (text, maxLength) => {
@@ -20,15 +27,17 @@ function ArticleItem({ news }) {
       rel="noopener noreferrer"
       className={styles.articleItem}
     >
-      <div className={styles.articleImgContainer}>
-        <img src={urlToImage} alt="" />
-      </div>
+      {isDesktop && (
+        <div className={styles.articleImgContainer}>
+          <img src={urlToImage} alt="" />
+        </div>
+      )}
       <div className={styles.articleRightside}>
-        <h4>{title}</h4>
+        <h4>{title && reduceTextSize(title, isDesktop ? 120 : 80)}</h4>
         <h5>
           <Date dateString={publishedAt} />
         </h5>
-        <p>{content && reduceTextSize(content, 150)}</p>
+        <p>{content && reduceTextSize(content, isDesktop ? 150 : 100)}</p>
       </div>
     </a>
   );
