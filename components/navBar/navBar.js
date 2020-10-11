@@ -61,7 +61,11 @@ const NavBar = () => {
           <Form inline onSubmit={onSubmit}>
             <div className="form-group">
               <AutoCompleteField />
-              <Button className="my-2 mr-2" type="submit" variant="success">
+              <Button
+                className="my-2 mr-2"
+                type="submit"
+                variant="outline-dark"
+              >
                 Search
               </Button>
             </div>

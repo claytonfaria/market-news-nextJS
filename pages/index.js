@@ -33,7 +33,7 @@ export default function Home({ news }) {
           <Button
             className={`mb-3 ${expanded && 'd-none'}`}
             onClick={handleOnClick}
-            variant="info"
+            variant="dark"
           >
             More Articles
           </Button>
