@@ -1,8 +1,11 @@
 import Head from 'next/head';
 import Button from 'react-bootstrap/Button';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import { useState } from 'react';
 
-import Layout, { siteTitle } from '../components/layout';
+import { siteTitle } from '../components/layout';
+import SideBar from '../components/sideBar';
 import MainArticle from '../components/articles/mainArticle';
 import fetchArticles from '../lib/fetchArticles';
 import ArticleItem from '../components/articles/ArticleItem';
@@ -17,22 +20,29 @@ export default function Home({ news }) {
   };
 
   return (
-    <Layout home>
+    <>
       <Head>
-        <title>{siteTitle}</title>
+        <title>{`${siteTitle} | Home`}</title>
       </Head>
-      <MainArticle news={news[0]} />
-      {news.slice(1, itemsToShow).map((item, index) => (
-        <ArticleItem key={index} news={item} />
-      ))}
-      <Button
-        className={`mb-3 ${expanded && 'd-none'}`}
-        onClick={handleOnClick}
-        variant="info"
-      >
-        More Articles
-      </Button>
-    </Layout>
+      <Row className="pt-4">
+        <Col lg={8} className="w-100 min-vh-100">
+          <MainArticle news={news[0]} />
+          {news.slice(1, itemsToShow).map((item, index) => (
+            <ArticleItem key={index} news={item} />
+          ))}
+          <Button
+            className={`mb-3 ${expanded && 'd-none'}`}
+            onClick={handleOnClick}
+            variant="info"
+          >
+            More Articles
+          </Button>
+        </Col>
+        <Col lg={4} className="px-1 d-none d-lg-block">
+          <SideBar />
+        </Col>
+      </Row>
+    </>
   );
 }
 

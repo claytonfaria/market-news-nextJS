@@ -1,15 +1,12 @@
 import Head from 'next/head';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 import Footer from './footer/footer';
 import NavBar from './navBar/navBar';
 import TickerBar from './tickerBar/tickerBar';
-import SideBar from './sideBar/sideBar';
 
 export const siteTitle = 'MarketNews';
 
-const Layout = ({ children, home }) => {
+const Layout = ({ children }) => {
   return (
     <div className="container-fluid bg-light p-0">
       <Head>
@@ -42,20 +39,7 @@ const Layout = ({ children, home }) => {
       <NavBar />
       <TickerBar />
       <div className="container-lg">
-        <main>
-          {home ? (
-            <Row className="pt-4">
-              <Col lg={8} className="w-100 min-vh-100">
-                {children}
-              </Col>
-              <Col lg={4} className="px-1 d-none d-lg-block">
-                <SideBar />
-              </Col>
-            </Row>
-          ) : (
-            <>{children}</>
-          )}
-        </main>
+        <main>{children}</main>
       </div>
       <Footer />
     </div>

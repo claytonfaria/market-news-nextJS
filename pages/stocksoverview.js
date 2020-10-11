@@ -1,18 +1,18 @@
 import Head from 'next/head';
 
-import Layout, { siteTitle } from '../components/layout';
+import { siteTitle } from '../components/layout';
 import { StockOverview } from '../components/tradingViewWidgets';
 
 const StocksOverview = () => {
   return (
-    <Layout>
+    <>
       <Head>
-        <title>{siteTitle}</title>
+        <title>{`${siteTitle} | Stocks Overview`}</title>
       </Head>
       <div className="pt-4">
         <StockOverview />
       </div>
-    </Layout>
+    </>
   );
 };
 

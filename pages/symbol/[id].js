@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useRouter } from 'next/router';
 
-import Layout, { siteTitle } from '../../components/layout';
+import { siteTitle } from '../../components/layout';
 import {
   SymbolOverview,
   CompanyProfile,
@@ -18,9 +18,9 @@ const SymbolDetails = () => {
   const { id } = router.query;
 
   return (
-    <Layout>
+    <>
       <Head>
-        <title>{siteTitle}</title>
+        <title>{`${siteTitle} | Symbol Overview`}</title>
       </Head>
       {id && (
         <>
@@ -42,7 +42,7 @@ const SymbolDetails = () => {
           </Tabs>
         </>
       )}
-    </Layout>
+    </>
   );
 };
 
