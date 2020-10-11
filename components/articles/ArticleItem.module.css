@@ -95,9 +95,3 @@
     font-size: 0.8em;
   }
 }
-
-@media screen and (max-width: 1200px) {
-  .ArticleItem_articleItem__yMimC {
-    height: 180px;
-  }
-}
