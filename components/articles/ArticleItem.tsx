@@ -4,7 +4,17 @@ import Date from '../../utils/date';
 
 import styles from './ArticleItem.module.css';
 
-function ArticleItem({ news }) {
+type NewsType = {
+  news: {
+    content: string;
+    urlToImage: string;
+    title: string;
+    publishedAt: string;
+    url: string;
+  };
+};
+
+function ArticleItem({ news }:NewsType) {
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
@@ -12,7 +22,7 @@ function ArticleItem({ news }) {
   }, []);
   const { content, urlToImage, title, publishedAt, url } = news;
 
-  const reduceTextSize = (text, maxLength) => {
+  const reduceTextSize = (text:string, maxLength: number) => {
     if (text.length > maxLength) {
       return `${text.slice(0, maxLength)}...`;
     }

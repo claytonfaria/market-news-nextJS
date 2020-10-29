@@ -2,7 +2,17 @@ import Date from '../../utils/date';
 
 import styles from './MainArticle.module.css';
 
-function MainArticle({ news }) {
+type NewsType = {
+  news: {
+    content: string;
+    urlToImage: string;
+    title: string;
+    publishedAt: string;
+    url: string;
+  };
+};
+
+function MainArticle({ news }:NewsType) {
   const { urlToImage, title, publishedAt, url } = news;
 
   return (

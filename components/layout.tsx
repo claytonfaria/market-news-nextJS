@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { ReactNode } from 'react';
 
 import Footer from './footer/footer';
 import NavBar from './navBar/navBar';
@@ -6,7 +7,11 @@ import TickerBar from './tickerBar/tickerBar';
 
 export const siteTitle = 'MarketNews';
 
-const Layout = ({ children }) => {
+type Children = {
+  children: ReactNode;
+};
+
+const Layout = ({ children }:Children) => {
   return (
     <div className="container-fluid bg-light p-0">
       <Head>

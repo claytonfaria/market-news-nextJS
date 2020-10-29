@@ -10,7 +10,17 @@ import MainArticle from '../components/articles/mainArticle';
 import fetchArticles from '../lib/fetchArticles';
 import ArticleItem from '../components/articles/ArticleItem';
 
-export default function Home({ news }) {
+type NewsType = {
+  news: [{
+    content: string;
+    urlToImage: string;
+    title: string;
+    publishedAt: string;
+    url: string;
+  }];
+};
+
+export default function Home({ news }:NewsType) {
   const [itemsToShow, setItemsToShow] = useState(12);
   const [expanded, setExpanded] = useState(false);
 

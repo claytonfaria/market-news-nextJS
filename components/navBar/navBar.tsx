@@ -12,7 +12,7 @@ import AutoCompleteField from './autoCompleteField';
 const NavBar = () => {
   const router = useRouter();
 
-  const onSubmit = (e) => {
+  const onSubmit = (e:any) => {
     const symbol = e.target[0].value;
 
     if (router.pathname === '/') {
